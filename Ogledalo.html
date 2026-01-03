@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -24,7 +25,6 @@
         0 0 25px rgba(192,192,192,0.6),
         0 0 35px rgba(220,220,220,0.3) inset;
     }
-
     .prica-container::before {
       content: "";
       position: absolute;
@@ -35,24 +35,29 @@
       box-shadow: 0 0 15px rgba(255,255,255,0.4) inset;
       animation: shine 3s ease-in-out infinite alternate;
     }
-
     @keyframes shine {
       0% { box-shadow: 0 0 5px rgba(255,255,255,0.2) inset; }
       50% { box-shadow: 0 0 25px rgba(255,255,255,0.6) inset; }
       100% { box-shadow: 0 0 10px rgba(255,255,255,0.3) inset; }
     }
-
     .prica-container h1 {
       text-align: center;
       color: #333;
       margin-bottom: 30px;
     }
-
     .prica-container p {
       line-height: 1.8;
       color: #222;
       margin-bottom: 20px;
       text-align: justify;
+    }
+    /* Brojač vidljiv samo tebi */
+    #counter-container {
+      display: none; /* po defaultu skriven */
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+      font-style: italic;
     }
   </style>
 </head>
@@ -64,19 +69,24 @@
     <p>Telo je odeća naše duše, naravno da je važno šta oblačimo i kako to nosimo, ali nije presudno. Da li zaista njime želimo da privučemo nečiju pažnju? I dobro... šta nakon toga očekujemo? Zašto budemo razočarani? Baš zato i nismo zadovoljni nikada. Ne znamo šta vidimo dok u nešto gledamo, ne znamo u šta smo gledali kad smo nešto videli.</p>
     <p>Nezadovoljni smo jer sve gledamo kao nas same u ogledalu, umesto da pogledamo unutar tog ogledala, mi se zadovoljavamo površinskim stvarima. A tamo gde gledamo odraza nema.</p>
     <p>Sledeći put kad staneš pred ogledalo zapitaj se šta gledaš u njemu? Sebe ili svoj odraz. Zapitaj se ko si zapravo ti i šta zaista trebaš? I ne ljuti se na kraju zbog iskrivljene slike, nije problem u ogledalu već u tebi.</p>
-    <!-- Poseta brojač -->
-    <p>Ovo priču pročitalo: <span id="counter">0</span> ljudi</p>
+    
+    <div id="counter-container">
+      Ovo priču pročitalo: <span id="counter">0</span> ljudi
+    </div>
   </div>
 
-  <!-- CountAPI za brojač poseta -->
+  <!-- CountAPI brojač -->
   <script>
-    // Promeni namespace i key po želji
-    const countKey = "ogledalo/posete";
-    fetch(`https://api.countapi.xyz/hit/${countKey}`)
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById("counter").innerText = res.value;
-      });
+    const showCounter = true; // promeni u false da sakriješ brojač za sve osim tebe
+    if(showCounter) {
+      document.getElementById("counter-container").style.display = "block";
+      const countKey = "ogledalo/posete";
+      fetch(`https://api.countapi.xyz/hit/${countKey}`)
+        .then(res => res.json())
+        .then(res => {
+          document.getElementById("counter").innerText = res.value;
+        });
+    }
   </script>
 </body>
 </html>
