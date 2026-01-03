@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -7,35 +6,49 @@
   <title>Ogledalo u odrazu</title>
   <style>
     body {
-      background-color: #e0e0e0; /* svetlo siva pozadina */
+      background-color: #e0e0e0;
       font-family: Georgia, serif;
       display: flex;
       justify-content: center;
       padding: 40px 20px;
     }
     .prica-container {
-      max-width: 800px;
+      max-width: 700px;
       background-color: #fff;
       padding: 40px;
-      border: 8px solid #c0c0c0; /* srebrni ram */
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
+      border: 8px solid #c0c0c0; /* osnovni srebrni okvir */
+      border-radius: 50% / 40%; /* ovalni/jajasti oblik */
+      margin: 60px auto;
       position: relative;
+      box-shadow:
+        0 0 25px rgba(192,192,192,0.6),
+        0 0 35px rgba(220,220,220,0.3) inset;
     }
-    .prica-container::before, .prica-container::after {
+
+    .prica-container::before {
       content: "";
       position: absolute;
-      border: 2px solid #d0d0d0;
-      top: -12px; left: -12px; right: -12px; bottom: -12px;
-      border-radius: 22px;
+      top: -10px; left: -10px; right: -10px; bottom: -10px;
+      border-radius: 50% / 40%;
+      border: 2px solid rgba(255,255,255,0.5);
       pointer-events: none;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4) inset;
+      animation: shine 3s ease-in-out infinite alternate;
     }
-    h1 {
+
+    @keyframes shine {
+      0% { box-shadow: 0 0 5px rgba(255,255,255,0.2) inset; }
+      50% { box-shadow: 0 0 25px rgba(255,255,255,0.6) inset; }
+      100% { box-shadow: 0 0 10px rgba(255,255,255,0.3) inset; }
+    }
+
+    .prica-container h1 {
       text-align: center;
       color: #333;
       margin-bottom: 30px;
     }
-    p {
+
+    .prica-container p {
       line-height: 1.8;
       color: #222;
       margin-bottom: 20px;
@@ -46,21 +59,24 @@
 <body>
   <div class="prica-container">
     <h1>Ogledalo u odrazu</h1>
-    <p>
-      Ogledalo. Veliko, naspram tebe je. Šta ti pruža? Pogled na šta? Zar je toliko važno kako izgledaš? Da li te ta slika predstavlja? Koliko ona govori o tebi? To ogledalo i slika nas zaslepljuju jer vidimo samo sebe i ono iza nas, a uskraćuje nam i ne možemo videti ispred nas, oko nas, u nama. Tu leži problem. U stanju smo sate provoditi ogledajući se.
-    </p>
-    <p>
-      Analiziramo svaku crtu lica, svaku boru, svaku tačku na koži. Pronalazimo hiljadu mana i još toliko grešaka. Uvek nam nešto nedostaje, uvek želimo više, bolje, lepše. Što se duže gledamo, manje smo savršeni, slika se sve više narušava. A opet, je svejedno jer to nismo mi, ti mi kojima tražimo mane. Nismo, fizički gledano, nedostaje još jedno ogledalo iza nas jer osim prednje imamo i zadnju stranu tela. Kada stavimo jedno naspram drugog ogledala možemo se videti sa obe strane, sa svih strana, ali se odrazi produbljuju. U svakom ogledalu ima još jednog i još jednog i još jednog i mnogo takvih, beskonačno puno nas samih. E to smo mi, baš ta slika. Slika koja je neshvatljiva, koja zastrašuje dok se u nju gleda, ona čiji kraj ne možemo sagledati. Ona kojoj zanemarujemo mane koje su nam do pre par sekundi bole oči.
-    </p>
-    <p>
-      Telo je odeća naše duše, naravno da je važno šta oblačimo i kako to nosimo, ali nije presudno. Da li zaista njime želimo da privučemo nečiju pažnju? I dobro... šta nakon toga očekujemo? Zašto budemo razočarani? Baš zato i nismo zadovoljni nikada. Ne znamo šta vidimo dok u nešto gledamo, ne znamo u šta smo gledali kad smo nešto videli.
-    </p>
-    <p>
-      Nezadovoljni smo jer sve gledamo kao nas same u ogledalu, umesto da pogledamo unutar tog ogledala, mi se zadovoljavamo površinskim stvarima. A tamo gde gledamo odraza nema.
-    </p>
-    <p>
-      Sledeći put kad staneš pred ogledalo zapitaj se šta gledaš u njemu? Sebe ili svoj odraz. Zapitaj se ko si zapravo ti i šta zaista trebaš? I ne ljuti se na kraju zbog iskrivljene slike, nije problem u ogledalu već u tebi.
-    </p>
+    <p>Ogledalo. Veliko, naspram tebe je. Šta ti pruža? Pogled na šta? Zar je toliko važno kako izgledaš? Da li te ta slika predstavlja? Koliko ona govori o tebi? To ogledalo i slika nas zaslepljuju jer vidimo samo sebe i ono iza nas, a uskraćuje nam i ne možemo videti ispred nas, oko nas, u nama. Tu leži problem. U stanju smo sate provoditi ogledajući se.</p>
+    <p>Analiziramo svaku crtu lica, svaku boru, svaku tačku na koži. Pronalazimo hiljadu mana i još toliko grešaka. Uvek nam nešto nedostaje, uvek želimo više, bolje, lepše. Što se duže gledamo, manje smo savršeni, slika se sve više narušava. A opet, je svejedno jer to nismo mi, ti mi kojima tražimo mane. Nismo, fizički gledano, nedostaje još jedno ogledalo iza nas jer osim prednje imamo i zadnju stranu tela. Kada stavimo jedno naspram drugog ogledala možemo se videti sa obe strane, sa svih strana, ali se odrazi produbljuju. U svakom ogledalu ima još jednog i još jednog i još jednog i mnogo takvih, beskonačno puno nas samih. E to smo mi, baš ta slika. Slika koja je neshvatljiva, koja zastrašuje dok se u nju gleda, ona čiji kraj ne možemo sagledati. Ona kojoj zanemarujemo mane koje su nam do pre par sekundi bole oči.</p>
+    <p>Telo je odeća naše duše, naravno da je važno šta oblačimo i kako to nosimo, ali nije presudno. Da li zaista njime želimo da privučemo nečiju pažnju? I dobro... šta nakon toga očekujemo? Zašto budemo razočarani? Baš zato i nismo zadovoljni nikada. Ne znamo šta vidimo dok u nešto gledamo, ne znamo u šta smo gledali kad smo nešto videli.</p>
+    <p>Nezadovoljni smo jer sve gledamo kao nas same u ogledalu, umesto da pogledamo unutar tog ogledala, mi se zadovoljavamo površinskim stvarima. A tamo gde gledamo odraza nema.</p>
+    <p>Sledeći put kad staneš pred ogledalo zapitaj se šta gledaš u njemu? Sebe ili svoj odraz. Zapitaj se ko si zapravo ti i šta zaista trebaš? I ne ljuti se na kraju zbog iskrivljene slike, nije problem u ogledalu već u tebi.</p>
+    <!-- Poseta brojač -->
+    <p>Ovo priču pročitalo: <span id="counter">0</span> ljudi</p>
   </div>
+
+  <!-- CountAPI za brojač poseta -->
+  <script>
+    // Promeni namespace i key po želji
+    const countKey = "ogledalo/posete";
+    fetch(`https://api.countapi.xyz/hit/${countKey}`)
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById("counter").innerText = res.value;
+      });
+  </script>
 </body>
 </html>
