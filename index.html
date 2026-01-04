@@ -2,140 +2,112 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <title>Prostor za slušanje i refleksiju</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      font-weight: normal;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-    a.button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-    small {
-      color: #666;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-    button {
-      background: #333;
-      color: white;
-      border: none;
-      border-radius: 6px;
-    }
-  </style>
-</head><style>
-  .prica-container {
-    max-width: 800px;
-    background-color: #fff;
-    padding: 40px;
-    border: 8px solid #c0c0c0; /* srebrni ram */
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
-    margin: 40px auto;
-  }
-  .prica-container h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  .prica-container p {
-    line-height: 1.8;
-    color: #222;
-    margin-bottom: 20px;
-    text-align: justify;
-  }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ogledalo u odrazu</title>
+
+<style>
+body {
+  background: linear-gradient(180deg, #f4efe8, #e6dfd5);
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  color: #2b2b2b;
+}
+
+/* OGLEDALO */
+.prica-container {
+  max-width: 720px;
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 50% / 42%;
+  border: 10px solid #c9c9c9;
+  box-shadow:
+    0 0 30px rgba(200,200,200,0.6),
+    inset 0 0 35px rgba(255,255,255,0.6);
+  position: relative;
+}
+
+/* svetlucavi unutrašnji okvir */
+.prica-container::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50% / 42%;
+  border: 2px solid rgba(255,255,255,0.7);
+  box-shadow: inset 0 0 25px rgba(255,255,255,0.7);
+  animation: sjaj 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes sjaj {
+  from { box-shadow: inset 0 0 10px rgba(255,255,255,0.3); }
+  to   { box-shadow: inset 0 0 30px rgba(255,255,255,0.8); }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #3a3a3a;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.9;
+  margin-bottom: 22px;
+  text-align: justify;
+}
+
+/* srebrni linkovi */
+a {
+  color: #b7b7b7;
+  text-decoration: none;
+}
+a:hover {
+  color: #8f8f8f;
+}
+
+/* brojač – diskretan */
+#counter-container {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #777;
+  display: none;
+}
 </style>
+</head>
 
+<body>
 
-<body> <a href="ogledalo.html" style="color: silver; text-decoration: none; font-weight: bold; font-size: 1.2em;">
-  Ogledalo u odrazu
-</a>
+<div class="prica-container">
+<h1>Ogledalo u odrazu</h1>
 
+<p>Ogledalo. Veliko, naspram tebe je. Šta ti pruža? Pogled na šta? Zar je toliko važno kako izgledaš? Da li te ta slika predstavlja? Koliko ona govori o tebi? To ogledalo i slika nas zaslepljuju jer vidimo samo sebe i ono iza nas, a uskraćuje nam i ne možemo videti ispred nas, oko nas, u nama. Tu leži problem. U stanju smo sate provoditi ogledajući se.</p>
 
-  <h1>Prostor gde možeš biti saslušan/a</h1>
+<p>Analiziramo svaku crtu lica, svaku boru, svaku tačku na koži. Pronalazimo hiljadu mana i još toliko grešaka. Uvek nam nešto nedostaje, uvek želimo više, bolje, lepše. Što se duže gledamo, manje smo savršeni, slika se sve više narušava. A opet, je svejedno jer to nismo mi.</p>
 
-  <div class="box">
-    <p>
-      Ovo je prostor za one koji žele da govore, a ne traže savet.
-      Prostor za pisanje, slušanje, razumevanje i refleksiju.
-    </p>
-    <p>
-      Nisam terapeut. Nisam life coach. Ne dajem savete.
-      Ja sam osoba koja sluša, razume i reflektuje ono što je izgovoreno i neizgovoreno.
-    </p>
-  </div>
+<p>Kada stavimo jedno naspram drugog ogledala možemo se videti sa obe strane, sa svih strana, ali se odrazi produbljuju. U svakom ogledalu ima još jednog i još jednog i još jednog. Beskonačno puno nas samih.</p>
 
-  <div class="box">
-    <h2>Kako ovo izgleda</h2>
-    <ul>
-      <li>Ti pišeš ili govoriš</li>
-      <li>Ja slušam pažljivo i bez žurbe</li>
-      <li>Vraćam ti ono što čujem – jasno i mirno</li>
-      <li>Nema saveta, nema dijagnoza, nema popravki</li>
-    </ul>
-  </div>
+<p>Telo je odeća naše duše. Važno je šta oblačimo, ali nije presudno. Nezadovoljni smo jer gledamo samo površinu, umesto da pogledamo unutra. A tamo gde gledamo – odraza nema.</p>
 
-  <div class="box">
-    <h2>Za koga je ovo</h2>
-    <p>
-      Za one koji žele da budu viđeni i shvaćeni.
-      Za one kojima je potreban siguran prostor.
-      Za one koji ne traže rešenje, već prisustvo.
-    </p>
-  </div>
-  <p>
-  <a href="mailto:sanjalombardo@gmail.com">Kontakt</a>
-</p>
+<p>Sledeći put kad staneš pred ogledalo zapitaj se šta gledaš u njemu. Sebe ili svoj odraz. I ne ljuti se zbog iskrivljene slike – nije problem u ogledalu.</p>
 
+<div id="counter-container">
+Ovu priču je pročitalo <span id="counter">0</span> ljudi
+</div>
+</div>
 
-  <div class="box">
-    <h2>Kontakt</h2>
-    <p>
-      Ako osećaš da želiš da se javiš, možeš to učiniti ovde:
-    
-    </form>
-
-    <small>Odgovaram lično i diskretno.</small>
-  </div>
-
-  <div class="box">
-    <h2>Podrška / uplata</h2>
-    <p>
-      Ako želiš da podržiš ovaj prostor ili uplatiš susret:
-    </p>
-
-    <a class="button" href="https://paypal.me/IvaSabo?locale.x=en_US&country.x=RS target="_blank">
-      PayPal uplata
-    </a>
-
-    <small>Bez obaveze. U tvom tempu.</small>
-  </div>
+<script>
+const showCounter = true; // stavi false ako želiš da niko ne vidi
+if (showCounter) {
+  document.getElementById("counter-container").style.display = "block";
+  fetch("https://api.countapi.xyz/hit/ogledalo-u-odrazu/posete")
+    .then(r => r.json())
+    .then(r => document.getElementById("counter").innerText = r.value);
+}
+</script>
 
 </body>
 </html>
