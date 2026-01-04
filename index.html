@@ -4,110 +4,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ogledalo u odrazu</title>
+<title>Ogledalo</title>
 
 <style>
 body {
-  background: linear-gradient(180deg, #f4efe8, #e6dfd5);
+  background: linear-gradient(180deg, #f6efe7, #e9dfd2);
   font-family: Georgia, serif;
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
-  color: #2b2b2b;
+  text-align: center;
+  padding: 80px 20px;
+  color: #3a2f2f;
 }
 
-/* OGLEDALO */
-.prica-container {
-  max-width: 720px;
-  background: #ffffff;
-  padding: 45px;
-  border-radius: 50% / 42%;
-  border: 10px solid #c9c9c9;
-  box-shadow:
-    0 0 30px rgba(200,200,200,0.6),
-    inset 0 0 35px rgba(255,255,255,0.6);
-  position: relative;
-}
-
-/* svetlucavi unutrašnji okvir */
-.prica-container::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border-radius: 50% / 42%;
-  border: 2px solid rgba(255,255,255,0.7);
-  box-shadow: inset 0 0 25px rgba(255,255,255,0.7);
-  animation: sjaj 4s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes sjaj {
-  from { box-shadow: inset 0 0 10px rgba(255,255,255,0.3); }
-  to   { box-shadow: inset 0 0 30px rgba(255,255,255,0.8); }
+.cup {
+  font-size: 80px;
+  margin-bottom: 30px;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 35px;
-  color: #3a3a3a;
-  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 40px;
 }
 
-p {
-  line-height: 1.9;
-  margin-bottom: 22px;
-  text-align: justify;
-}
-
-/* srebrni linkovi */
 a {
-  color: #b7b7b7;
+  color: #c0c0c0;
+  font-size: 20px;
   text-decoration: none;
-}
-a:hover {
-  color: #8f8f8f;
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 5px;
 }
 
-/* brojač – diskretan */
-#counter-container {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #777;
-  display: none;
+a:hover {
+  color: #9e9e9e;
 }
 </style>
 </head>
 
 <body>
 
-<div class="prica-container">
-<h1>Ogledalo u odrazu</h1>
+<div class="cup">☕</div>
 
-<p>Ogledalo. Veliko, naspram tebe je. Šta ti pruža? Pogled na šta? Zar je toliko važno kako izgledaš? Da li te ta slika predstavlja? Koliko ona govori o tebi? To ogledalo i slika nas zaslepljuju jer vidimo samo sebe i ono iza nas, a uskraćuje nam i ne možemo videti ispred nas, oko nas, u nama. Tu leži problem. U stanju smo sate provoditi ogledajući se.</p>
+<h1>Dobro došla</h1>
 
-<p>Analiziramo svaku crtu lica, svaku boru, svaku tačku na koži. Pronalazimo hiljadu mana i još toliko grešaka. Uvek nam nešto nedostaje, uvek želimo više, bolje, lepše. Što se duže gledamo, manje smo savršeni, slika se sve više narušava. A opet, je svejedno jer to nismo mi.</p>
-
-<p>Kada stavimo jedno naspram drugog ogledala možemo se videti sa obe strane, sa svih strana, ali se odrazi produbljuju. U svakom ogledalu ima još jednog i još jednog i još jednog. Beskonačno puno nas samih.</p>
-
-<p>Telo je odeća naše duše. Važno je šta oblačimo, ali nije presudno. Nezadovoljni smo jer gledamo samo površinu, umesto da pogledamo unutra. A tamo gde gledamo – odraza nema.</p>
-
-<p>Sledeći put kad staneš pred ogledalo zapitaj se šta gledaš u njemu. Sebe ili svoj odraz. I ne ljuti se zbog iskrivljene slike – nije problem u ogledalu.</p>
-
-<div id="counter-container">
-Ovu priču je pročitalo <span id="counter">0</span> ljudi
-</div>
-</div>
-
-<script>
-const showCounter = true; // stavi false ako želiš da niko ne vidi
-if (showCounter) {
-  document.getElementById("counter-container").style.display = "block";
-  fetch("https://api.countapi.xyz/hit/ogledalo-u-odrazu/posete")
-    .then(r => r.json())
-    .then(r => document.getElementById("counter").innerText = r.value);
-}
-</script>
+<a href="ogledalo.html">Ogledalo u odrazu</a>
 
 </body>
 </html>
